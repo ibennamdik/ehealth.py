@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Patient Diagnosis{% endblock %}
+{% block head %}Patient Diagnosis{% endblock %}
+
+{% block content %}
+	{% if message %}
+		{{ message }}<br>
+		
+	{% endif %}
+	<div>
+	    <form action="" method="post">
+	    	{% csrf_token %}
+
+	    	{{ form.as_ul }}
+	        <input type="submit" value="Submit" />
+	    </form>
+	</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}Appointments{% endblock %}
+
+{% block currentpage %}Appointment{% endblock %}
+
+
+{% block content %}
+
+    <h2>Appointments</h2> for : Dr. {{ request.user }}
+    <ul>
+        {% for Appointment in object_list %}
+            <li>
+            {{ Appointment.appointment_identification_number }} | 
+            {{ Appointment.patient.patient_first_name }}
+            {{ Appointment.patient.patient_middle_name }}
+            {{ Appointment.patient.patient_last_name }} | 
+            {{ Appointment.appointment_status }} |
+            {{ Appointment.date_created }}  
+            </li>
+        {% endfor %}
+    </ul>
+  
+{% endblock %}

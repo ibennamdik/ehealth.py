@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}EDIT PATIENT{% endblock %}
+
+{% block currentpage %}{% endblock %}
+
+{% block content %}
+<h3>UPDATE PATIENT DATA</h3>
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update" />
+</form>
+
+{% endblock %}

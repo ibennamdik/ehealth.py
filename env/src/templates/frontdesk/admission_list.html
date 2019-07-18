@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}ADMISSIONS{% endblock %}
+
+{% block currentpage %}Admissions Home{% endblock %}
+
+
+<!-- Content main -->
+<!-- {% block search%} 
+ <h2>Search</h2>
+  <form action="/patient/search/" method="GET">
+    <label for="q">Patient ID: </label>
+    <input type="text" name="q" value="{{ query|escape }}">
+    <input type="submit" value="Search">
+  </form>
+{% endblock %} -->
+
+{% block content %}
+  <br><br>
+  <a href="{% url 'patient_admission' %}">Admit Patient</a>)
+
+  <br><br>
+  <h3>PATIENTS ON ADMISSION:</h3>
+   
+   <!-- {% if logged_users %}
+      <ul>
+      {% for logged_users in logged_users %}
+        {{ logged_users.user.first_name }} {{ logged_users.user.last_name }} : 
+        (<a href="">Message</a>)
+          <br>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>No Doctor available</p>
+    {% endif %}
+ -->
+    
+{% endblock %}	
+		

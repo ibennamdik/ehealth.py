@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Manufacturer Registration{% endblock %}
+{% block head %}Manufacturer Registration{% endblock %}
+
+{% block content %}
+	{% if message %}
+		{{ message }}<br>
+
+	{% endif %}
+	<div>
+	    <form action="" method="post">
+	    	{% csrf_token %}
+
+	    	{{ form.as_ul }}
+	        <input type="submit" value="Submit" />
+	    </form>
+	</div>
+{% endblock %}
+
+{% block appmenu %}
+<br><br>
+(<a href="{% url 'inventory_home' %}">Inventory Home</a>) |
+(<a href="{% url 'add_product' %}">Add new Product</a>) | 
+(<a href="{% url 'add_category' %}">Add new category</a>) | 
+(<a href="{% url 'add_manufacturer' %}">Add new manufacturer</a>) | 
+(<a href="{% url 'add_supplier' %}">Add new supplier</a>)
+{% endblock%}

@@ -1,0 +1,14 @@
+[
+  {
+    "model": "patient.GroupAccount",
+    "pk": 1,
+    "fields": {
+      "group_identification_number": 1,
+      "group_name": "rembi medicals",
+      "group_email": "rembi@gmail.com",
+      "group_phone": "874783448283",
+      "group_phone2": "987548765483",
+      "group_address": "256 Oba akran Avenue, Lagos"
+    }
+  }
+]

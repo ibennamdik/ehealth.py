@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Patient Admission{% endblock %}
+{% block head %}Patient Admission{% endblock %}
+
+{% block content %}
+	{% if message %}
+		{{ message }}<br>
+
+		Admission ID is : {{ admission.patient }}
+
+	{% endif %}
+	<div>
+	    <form action="" method="post">
+	    	{% csrf_token %}
+
+	    	{{ form.as_ul }}
+	        <input type="submit" value="Submit" />
+	    </form>
+	</div>
+
+
+	
+{% endblock %}

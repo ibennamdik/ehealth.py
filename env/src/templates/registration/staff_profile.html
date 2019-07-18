@@ -1,0 +1,26 @@
+{%extends "base.html" %}
+{%block title %}Home {% endblock %}
+{%block head %}STAFF PROFILE{% endblock %}
+
+{%block content %}
+		Firstname: {{ staff.staff_first_name }}<br/>
+		Middlename : {{ staff.staff_middle_name }}<br/>
+		Lastname : {{ staff.staff_last_name }}<br/>
+		Sex : {{ staff.staff_sex }}<br/>
+		Tribe : {{ staff.staff_tribe }}</br>
+		Religion : {{ staff.staff_religion }}<br/>
+		Marital Status: {{ staff.staff_marital_status }}<br/>
+		Occupation : {{ staff.staff_occupation }}</br>
+		Address : {{ staff.staff_address }}<br/>
+		Phone number : {{ staff.staff_phone }}<br/>
+		Alternate number : {{ staff.staff_phone2 }}<br/>
+		Email : {{ staff.staff_email }}<br/>
+
+		<h3>Next Of Kin Information</h3>
+		Name : {{ staff.staff_next_of_kin_name }}<br/>
+		Phone number : {{ staff.staff_next_of_kin_number }}<br/>
+		Email: {{ staff.staff_next_of_kin_email }}<br/>
+
+		 (<a href="{% url 'staff_update' search_id=request.user.id %}">Edit My Profile</a>)
+
+		 {% endblock %} 

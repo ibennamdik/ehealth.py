@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Group Registration{% endblock %}
+{% block head %}Group Registration{% endblock %}
+
+{% block content %}
+	{% if message %}
+		{{ message }}<br>
+
+		Group ID is:{{ group_object }}
+
+	{% endif %}
+	<div>
+	    <form action="" method="post">
+	    	{% csrf_token %}
+
+	    	{{ form.as_ul }}
+	        <input type="submit" value="Submit" />
+	    </form>
+	</div>
+{% endblock %}

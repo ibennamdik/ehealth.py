@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}Consulting Room{% endblock %}
+
+{% block currentpage %}CONSULTING ROOM - Home{% endblock %}
+
+<!-- Content main -->
+{% block search%} 
+ <h2>Search</h2>
+  <form action="/patient/search/" method="GET">
+    <label for="q">Patient ID: </label>
+    <input type="text" name="q" value="{{ query|escape }}">
+    <input type="submit" value="Search">
+  </form>
+{% endblock %}
+
+{% block content %}
+  <br><br>
+  <h4>Tools</h4>
+  (<a href="{% url 'patient_register' %}">Register new Patient Account</a>) | 
+  (<a href="{% url 'group_register' %}">Register new Group Account</a>) 
+  <br>
+
+  <hr width="500px" align="left">
+  (<a href="{% url 'appointments' %}">My appointments</a>) |
+  
+
+  <!-- (<a href="{% url 'staff_update' search_id=1 %}">Edit My Profile</a>)
+ -->
+  
+{% endblock %}	

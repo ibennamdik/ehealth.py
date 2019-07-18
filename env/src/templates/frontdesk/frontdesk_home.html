@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}Frontdesk{% endblock %}
+
+{% block currentpage %}Front Desk{% endblock %}
+
+
+<!-- Content main -->
+{% block search%} 
+<form action="/patient/search/"  method="GET">
+  <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+    <div class="input-group">
+        <input class="form-control" placeholder="Search for..." type="text" name="q" value="{{ query|escape }}">
+          <span class="input-group-btn">
+              <button class="btn btn-default" type="submit" value="Search">Go!</button>
+          </span>
+        </div>
+    </div>
+  </form>
+{% endblock %}
+
+{% block content %}
+  
+        kscnjk
+                          
+{% endblock %}	
+		

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}Inventory{% endblock %}
+
+{% block currentpage %}Inventory Home{% endblock %}
+
+{% block search %} 
+ <h2>Search Product</h2>
+  <form action="/inventory/search/" method="GET">
+    <label for="q">Product Name: </label>
+    <input type="text" name="q" value="{{ query|escape }}">
+    <input type="submit" value="Search">
+  </form>
+
+  {% if query %}
+    <h3>Results for "{{ query|escape }}":</h3>
+
+    {% if results %}
+      <ul>
+      {% for results in results %}
+        <a href="#">
+        {{ results.product_name }}</a> under 
+        {{ results.product_category }} from
+        {{ results.product_manufacturer }}
+
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>No Product found with requested name</p>
+    {% endif %}
+  {% endif %}
+{% endblock %}
+
+<!-- Content main -->
+{% block content %}  
+
+<h3>INVENTORY HOME</h3>
+
+{% endblock %}
+
+{% block appmenu %}
+	
+<br><br>
+(<a href="{% url 'inventory_home' %}">Inventory Home</a>) |
+(<a href="{% url 'add_product' %}">Add new Product</a>) | 
+(<a href="{% url 'add_category' %}">Add new category</a>) | 
+(<a href="{% url 'add_manufacturer' %}">Add new manufacturer</a>) | 
+(<a href="{% url 'add_supplier' %}">Add new supplier</a>)
+
+{% endblock%}
+
+

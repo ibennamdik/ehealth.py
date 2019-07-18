@@ -1,0 +1,36 @@
+[
+  {
+    "model": "consultingroom.Appointment",
+    "pk": 1,
+    "fields": {
+      "appointment_identification_number": 1,
+      "appointment_status": "CPL",
+      "date_scheduled": "Alfred"
+    }
+  }
+]
+
+class Appointment(models.Model):
+    appointment_identification_number = models.IntegerField(primary_key=True)
+    doctor = models.OneToOneField(User)
+    patient = models.ForeignKey(Patient)
+    created_by = models.CharField(max_length=30, blank=False)
+    
+    PENDING = 'PND',
+    COMPLETE = 'CPL',
+    CANCELLED = 'CNC'    
+
+    option_appointment_status  = (
+    ('PENDING', 'Pending'),
+    ('COMPLETE', 'Completed'),
+    ('CANCELLED', 'Cancelled')
+  )
+
+    appointment_status = models.CharField(
+        max_length=2,
+        choices=option_appointment_status,
+        default='Pending'
+    )
+
+    created = models.DateTimeField(auto_now_add=True)
+    date_scheduled = models.DateTimeField(auto_now_add=False, blank=False)

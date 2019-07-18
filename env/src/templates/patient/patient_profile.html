@@ -1,0 +1,45 @@
+{%extends "base.html" %}
+{%block title %}Home {% endblock %}
+{%block head %}PATIENT PROFILE{% endblock %}
+
+{%block content %}
+		Patient ID: {{ patient.patient_identification_number }}</br>
+		Firstname: {{ patient.patient_first_name }}<br/>
+		Middlename : {{ patient.patient_middle_name }}<br/>
+		Lastname : {{ patient.patient_last_name }}<br/>
+		Sex : {{ patient.patient_sex }}<br/>
+		Tribe : {{ patient.patient_tribe }}</br>
+		Religion : {{ patient.patient_religion }}<br/>
+		Marital Status: {{ patient.patient_marital_status }}<br/>
+		Occupation : {{ patient.patient_occupation }}</br>
+		Address : {{ patient.patient_address }}<br/>
+		Phone number : {{ patient.patient_phone }}<br/>
+		Alternate number : {{ patient.patient_phone2 }}<br/>
+		Email : {{ patient.patient_email }}<br/>
+
+		<h3>Next Of Kin Information</h3>
+		Name : {{ patient.patient_next_of_kin_name }}<br/>
+		Phone number : {{ patient.patient_next_of_kin_number }}<br/>
+		Email: {{ patient.patient_next_of_kin_email }}<br/>
+
+		<h3>Registrar</h3>
+		{{ patient.registrar }}</br>
+
+		(<a href="{% url 'create_appointment' search_id=patient.patient_identification_number %}">Book Appointment</a>) | 
+		(<a href="{% url 'patient_update' search_id=patient.patient_identification_number %}">Edit Patient Data</a>) |
+		(<a href="{% url 'patient_records' search_id=patient.patient_identification_number %}">Medical Records</a>)
+
+		<h3>Appontments: </h3>
+		
+    		{% if appointment %}
+      		<ul>
+		      {% for appointment in appointment %}
+		        {{patient.patient_first_name }} has an appointment with {{ appointment.doctor.first_name }} {{ appointment.doctor.last_name }} on {{ appointment.date_created}} <br>
+		      {% endfor %}
+      		</ul>
+    		{% else %}
+      			<p>No Pending Appointment</p>
+    		{% endif %}
+
+
+	{% endblock %}

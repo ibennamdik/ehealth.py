@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Patient Appointment{% endblock %}
+{% block head %}Patient Appointment{% endblock %}
+
+{% block content %}
+	{% if message %}
+		{{ message }}<br>
+
+		Appointment ID is : {{ appointment_object.appointment_identification_number }}
+
+	{% endif %}
+	<div>
+	    <form action="" method="post">
+	    	{% csrf_token %}
+
+	    	{{ form.as_ul }}
+	        <input type="submit" value="Submit" />
+	    </form>
+	</div>
+
+
+	
+{% endblock %}

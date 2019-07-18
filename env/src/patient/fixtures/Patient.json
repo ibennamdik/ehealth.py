@@ -1,0 +1,25 @@
+[
+  {
+    "model": "patient.Patient",
+    "pk": 1,
+    "fields": {
+      "patient_identification_number": 1,
+      "patient_first_name": "Lennon",
+      "patient_middle_name": "Alfred",
+      "patient_last_name": "Mills",
+      "patient_sex": "Male",
+      "patient_tribe": "Igbo",
+      "patient_religion": "Christian",
+      "patient_occupation": "Pilot",
+      "patient_marital_status": "Single",
+      "patient_address": "23/34  Kingston Avenue jos",
+      "patient_next_of_kin_name": "Lennon Lamar",
+      "patient_next_of_kin_number": "2341234567890",
+      "patient_next_of_kin_email": "Lennonlamar@gmail.com",
+      "patient_phone": "2341234567890",
+      "patient_phone2": "2341234567890",
+      "patient_email": "Lennonalfred@yahoo.com"
+      
+    }
+  }
+]
